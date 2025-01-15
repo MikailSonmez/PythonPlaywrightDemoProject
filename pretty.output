@@ -1,0 +1,20 @@
+Feature: Search on Playwright website # features/example.feature:1
+
+  Scenario: Search for Playwright                                      # features/example.feature:3
+    Given I am on the Playwright homepage                              # features/steps/steps.py:4
+    When I search for "Playwright"                                     # features/steps/steps.py:11
+      Traceback (most recent call last):
+        File "C:\Users\mikai\PythonPlaywrightDemoProject\venv\lib\site-packages\behave\model.py", line 1329, in run
+          match.run(runner.context)
+        File "C:\Users\mikai\PythonPlaywrightDemoProject\venv\lib\site-packages\behave\matchers.py", line 98, in run
+          self.func(context, *args, **kwargs)
+        File "features\steps\steps.py", line 13, in step_search
+          context.page.fill('input[type="search"]', query)
+        File "C:\Users\mikai\PythonPlaywrightDemoProject\venv\lib\site-packages\playwright\sync_api\_generated.py", line 10124, in fill
+          self._sync(
+        File "C:\Users\mikai\PythonPlaywrightDemoProject\venv\lib\site-packages\playwright\_impl\_sync_base.py", line 104, in _sync
+          raise Error("Event loop is closed! Is Playwright already stopped?")
+      playwright._impl._errors.Error: Event loop is closed! Is Playwright already stopped?
+
+    Then I should see "Getting started with Playwright" in the results # None
+
